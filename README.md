@@ -18,8 +18,18 @@ A Go-based service for managing orders with a guaranteed deferred payment mechan
 ## Quick Start
 
 1. Clone the repository.
-2. Make sure Docker is installed.
-3. Run the project:
+2. Setup .env in the root directory
+```
+DB_USER=user
+DB_PASSWORD=secret_pass
+DB_NAME=db_name
+DB_HOST=db
+DB_PORT=some_port
+
+DATABASE_URL=postgres://user:secret_pass@db:some_port/db_name?sslmode=disable
+```
+3. Make sure Docker is installed.
+4. Run the project:
 
 ```bash
 docker-compose up --build
