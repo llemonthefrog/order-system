@@ -25,7 +25,7 @@ func (r *TaskRepository) Save(ctx context.Context, task *tasks.ScheduledTask) er
 
 func (r *TaskRepository) GetPendingTasks(ctx context.Context) ([]*tasks.ScheduledTask, error) {
 	query := `SELECT id, order_id, execute_at FROM scheduled_tasks 
-              WHERE status = 'pending' AND execute_at <= NOW()`
+              WHERE status = 'PENDING' AND execute_at <= NOW()`
 
 	rows, err := r.db.QueryContext(ctx, query)
 	if err != nil {
